@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abdalluh's — مونتير فيديو | محتوى سوشيال ميديا ومؤثرين</title>
+<meta name="description" content="Abdalluh's — مونتاج احترافي لمحتوى الريلز والسوشيال ميديا للمؤثرين والبراندات ">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Cairo:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black:#0D0D0D;
+    --cream:#F8F6F2;
+    --gray:#8A8A8A;
+    --gray-line:#26251f22;
+    --gold:#C9A24B;
+    --gold-dark:#8B6F2E;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--cream);
+    color:var(--black);
+    font-family:'Cairo','Inter',sans-serif;
+    overflow-x:hidden;
+  }
+  .serif{font-family:'Playfair Display',serif;}
+  a{text-decoration:none;color:inherit;}
+  ul{list-style:none;}
+  img,video{max-width:100%;display:block;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
+  section{padding:110px 0;}
+  h1,h2,h3{font-weight:600;line-height:1.25;}
+  .eyebrow{
+    font-family:'Inter',sans-serif;
+    letter-spacing:3px;
+    font-size:12px;
+    color:var(--gold-dark);
+    text-transform:uppercase;
+    margin-bottom:14px;
+    display:inline-block;
+  }
+  .gold-line{width:56px;height:2px;background:var(--gold);border:none;margin:18px 0 26px;}
+
+  /* NAV */
+  header{
+    position:fixed;top:0;right:0;left:0;z-index:100;
+    background:rgba(248,246,242,0.9);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid #0D0D0D14;
+  }
+  nav{display:flex;align-items:center;justify-content:space-between;padding:18px 32px;max-width:1180px;margin:0 auto;}
+  .logo{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;letter-spacing:.5px;}
+  .logo span{color:var(--gold-dark);}
+  .nav-links{display:flex;gap:36px;font-size:15px;font-weight:500;}
+  .nav-links a{position:relative;padding-bottom:4px;}
+  .nav-links a::after{content:"";position:absolute;bottom:0;right:0;width:0;height:1px;background:var(--gold);transition:width .3s;}
+  .nav-links a:hover::after{width:100%;}
+  .nav-cta{
+    background:var(--black);color:var(--cream);
+    padding:10px 22px;border-radius:4px;font-size:14px;font-weight:500;
+    display:flex;align-items:center;gap:8px;
+  }
+  .nav-cta:hover{background:var(--gold-dark);}
+  @media(max-width:760px){.nav-links{display:none;}}
+
+  /* HERO */
+  .hero{
+    padding-top:170px;padding-bottom:80px;
+    display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center;
+  }
+  @media(max-width:900px){.hero{grid-template-columns:1fr;padding-top:140px;}}
+  .hero h1{font-size:52px;font-family:'Playfair Display',serif;}
+  @media(max-width:600px){.hero h1{font-size:36px;}}
+  .hero p{font-size:18px;color:#3d3d3a;max-width:480px;margin:22px 0 34px;line-height:1.8;}
+  .btn-row{display:flex;gap:16px;flex-wrap:wrap;}
+  .btn{
+    padding:14px 28px;border-radius:4px;font-weight:600;font-size:15px;
+    display:inline-flex;align-items:center;gap:10px;
+    border:1px solid var(--black);
+  }
+  .btn-primary{background:var(--black);color:var(--cream);}
+  .btn-primary:hover{background:var(--gold-dark);border-color:var(--gold-dark);}
+  .btn-outline{background:transparent;color:var(--black);}
+  .btn-outline:hover{border-color:var(--gold);color:var(--gold-dark);}
+
+  /* Reel stack — signature element */
+  .reel-stack{position:relative;height:520px;display:flex;justify-content:center;}
+  .reel{
+    position:absolute;width:210px;height:380px;border-radius:20px;
+    background:linear-gradient(160deg,#1a1a1a,#0D0D0D);
+    border:6px solid var(--black);
+    box-shadow:0 30px 60px -20px #00000055;
+    overflow:hidden;
+  }
+  .reel::before{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(200deg, var(--gold-dark)33, transparent 60%);
+  }
+  .reel .play{
+    position:absolute;top:50%;right:50%;transform:translate(50%,-50%);
+    width:44px;height:44px;border-radius:50%;
+    border:1.5px solid #F8F6F2aa;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .reel .play::after{content:"";border-style:solid;border-width:8px 0 8px 13px;border-color:transparent transparent transparent #F8F6F2;margin-right:-2px;}
+  .reel .tag{position:absolute;bottom:16px;right:16px;left:16px;color:#F8F6F2;font-size:12px;letter-spacing:1px;font-family:'Inter',sans-serif;z-index:2;}
+  .reel video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;}
+  .reel-1{transform:rotate(-9deg) translateX(-90px);z-index:1;opacity:.85;}
+  .reel-2{z-index:3;}
+  .reel-3{transform:rotate(9deg) translateX(90px);z-index:1;opacity:.85;}
+  @media(max-width:900px){.reel-stack{height:420px;margin-top:20px;} .reel{width:170px;height:310px;} .reel-1{transform:rotate(-8deg) translateX(-70px);} .reel-3{transform:rotate(8deg) translateX(70px);}}
+
+  /* SECTION HEAD */
+  .section-head{max-width:640px;margin-bottom:60px;}
+  .section-head h2{font-size:34px;font-family:'Playfair Display',serif;}
+
+  /* PORTFOLIO GRID */
+  .filter-row{display:flex;gap:12px;margin-bottom:40px;flex-wrap:wrap;}
+  .filter-btn{
+    padding:8px 18px;border:1px solid #0D0D0D33;border-radius:30px;font-size:13px;font-weight:500;
+    background:transparent;cursor:pointer;font-family:'Cairo',sans-serif;
+  }
+  .filter-btn.active{background:var(--black);color:var(--cream);border-color:var(--black);}
+  .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+  @media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr);}}
+  .card{
+    position:relative;aspect-ratio:9/16;border-radius:14px;overflow:hidden;cursor:pointer;
+    background:linear-gradient(150deg,#2b2b28,#0D0D0D);
+  }
+  .card::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#000000cc,transparent 45%);}
+  .card .info{position:absolute;bottom:14px;right:14px;left:14px;z-index:2;color:#F8F6F2;}
+  .card .info b{font-size:14px;display:block;}
+  .card .info span{font-size:11px;color:var(--gold);font-family:'Inter',sans-serif;letter-spacing:.5px;}
+  .card .p-icon{
+    position:absolute;top:14px;left:14px;width:34px;height:34px;border-radius:50%;
+    border:1px solid #F8F6F2aa;display:flex;align-items:center;justify-content:center;z-index:2;
+  }
+  .card .p-icon::after{content:"";border-style:solid;border-width:6px 0 6px 10px;border-color:transparent transparent transparent #F8F6F2;margin-right:-2px;}
+  .card:hover{transform:translateY(-4px);transition:.25s;}
+  .card video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;}
+
+  /* LIGHTBOX */
+  .lightbox{
+    display:none;position:fixed;inset:0;z-index:300;
+    background:#0D0D0Ddd;backdrop-filter:blur(6px);
+    align-items:center;justify-content:center;
+  }
+  .lightbox.open{display:flex;}
+  .lightbox-inner{position:relative;width:min(92vw,420px);}
+  .lightbox-inner video{width:100%;max-height:82vh;border-radius:12px;background:#000;}
+  .lightbox-close{
+    position:absolute;top:-44px;left:0;background:none;border:1px solid #F8F6F255;
+    color:#F8F6F2;width:34px;height:34px;border-radius:50%;cursor:pointer;font-size:16px;
+  }
+
+  /* CASE STUDIES */
+  .stats-band{background:var(--black);color:var(--cream);}
+  .stats-band .section-head h2{color:var(--cream);}
+  .stats-band .eyebrow{color:var(--gold);}
+  .case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#ffffff14;}
+  @media(max-width:800px){.case-grid{grid-template-columns:1fr;}}
+  .case{background:var(--black);padding:34px;}
+  .case .num{font-family:'Playfair Display',serif;font-size:42px;color:var(--gold);}
+  .case .lbl{font-size:14px;color:#F8F6F2cc;margin-top:6px;}
+  .case .desc{font-size:13px;color:#F8F6F299;margin-top:14px;line-height:1.7;}
+
+  /* ABOUT */
+  .about{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px;align-items:center;}
+  @media(max-width:800px){.about{grid-template-columns:1fr;}}
+  .about-photo{
+    aspect-ratio:4/5;border-radius:16px;
+    background:linear-gradient(160deg,#1a1a1a,#0D0D0D);
+    border:1px solid var(--gold);
+    display:flex;align-items:center;justify-content:center;color:#F8F6F255;font-size:13px;
+  }
+  .about p{color:#3d3d3a;line-height:1.9;font-size:16px;margin-bottom:16px;}
+  .badges{display:flex;gap:14px;flex-wrap:wrap;margin-top:24px;}
+  .badge{border:1px solid #0D0D0D33;padding:8px 16px;border-radius:30px;font-size:13px;}
+
+  /* TESTIMONIALS */
+  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  @media(max-width:900px){.testi-grid{grid-template-columns:1fr;}}
+  .testi{background:#fff;border:1px solid #0D0D0D14;border-radius:14px;padding:30px;}
+  .testi p{font-size:15px;line-height:1.8;color:#3d3d3a;margin-bottom:20px;}
+  .testi .who{font-weight:700;font-size:14px;}
+  .testi .role{font-size:12px;color:var(--gold-dark);}
+  .stars{color:var(--gold);letter-spacing:2px;margin-bottom:14px;font-size:14px;}
+
+  /* CONTACT */
+  .contact{background:var(--black);color:var(--cream);text-align:center;}
+  .contact h2{font-family:'Playfair Display',serif;font-size:38px;}
+  .contact p{color:#F8F6F2aa;max-width:520px;margin:18px auto 34px;font-size:16px;line-height:1.8;}
+  .contact .btn-row{justify-content:center;}
+  .contact .btn-primary{background:var(--gold);border-color:var(--gold);color:var(--black);}
+  .contact .btn-primary:hover{background:var(--gold-dark);border-color:var(--gold-dark);color:var(--cream);}
+  .contact .btn-outline{border-color:#F8F6F255;color:var(--cream);}
+  .contact .btn-outline:hover{border-color:var(--gold);color:var(--gold);}
+
+  footer{padding:30px 0;text-align:center;font-size:13px;color:var(--gray);background:var(--black);border-top:1px solid #ffffff14;}
+
+  /* WHATSAPP FLOAT */
+  .wa-float{
+    position:fixed;bottom:26px;left:26px;z-index:200;
+    background:#0D0D0D;color:#F8F6F2;
+    width:58px;height:58px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 10px 30px -8px #00000066;
+    border:1.5px solid var(--gold);
+  }
+  .wa-float svg{width:26px;height:26px;fill:var(--gold);}
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo">Abdalluh<span>'s</span></div>
+    <ul class="nav-links">
+      <li><a href="#work">الأعمال</a></li>
+      <li><a href="#results">النتائج</a></li>
+      <li><a href="#about">عني</a></li>
+      <li><a href="#testimonials">آراء العملاء</a></li>
+    </ul>
+    <a class="nav-cta" href="#contact">تواصل الآن</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero wrap">
+  <div>
+    <span class="eyebrow">Video editor · Social &amp; influencer content</span>
+    <h1>مونتاج بيحول اللقطة العادية<br>لمحتوى الناس بتوقف عنده</h1>
+    <p>متخصص في مونتاج الريلز والشورتس للمؤثرين والبراندات  — إيقاع سريع، كولور جريدنج فاخر، وقصة بصرية بتخلي المشاهد يكمل للنهاية.</p>
+    <div class="btn-row">
+      <a href="#work" class="btn btn-primary">شوف الأعمال</a>
+      <a href="#contact" class="btn btn-outline">احجز استشارة</a>
+    </div>
+  </div>
+  <div class="reel-stack">
+    <div class="reel reel-1">
+      <video src="videos/hero-1.mp4" autoplay muted loop playsinline></video>
+      <div class="tag">FASHION REEL</div>
+    </div>
+    <div class="reel reel-2">
+      <video src="videos/hero-2.mp4" autoplay muted loop playsinline></video>
+      <div class="tag">Premium Reels</div>
+    </div>
+    <div class="reel reel-3">
+      <video src="videos/hero-3.mp4" autoplay muted loop playsinline></video>
+      <div class="tag">PODCAST CLIP</div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="work" class="wrap">
+  <div class="section-head">
+    <span class="eyebrow">Selected work</span>
+    <h2>أعمال مختارة</h2>
+  </div>
+  <div class="filter-row">
+    <button class="filter-btn active">الكل</button>
+    <button class="filter-btn">ريلز مؤثرين</button>
+    <button class="filter-btn">إعلانات براندات</button>
+    <button class="filter-btn">بودكاست</button>
+  </div>
+  <div class="grid">
+    <div class="card" data-video="videos/fashion-haul.mp4" onclick="openLightbox(this)">
+      <video src="videos/fashion-haul.mp4" muted loop playsinline preload="metadata"></video>
+      <div class="p-icon"></div>
+      <div class="info"><b>Fashion haul reel</b><span>INFLUENCER · 0:32</span></div>
+    </div>
+    <div class="card" data-video="videos/perfume-ad.mp4" onclick="openLightbox(this)">
+      <video src="videos/perfume-ad.mp4" muted loop playsinline preload="metadata"></video>
+      <div class="p-icon"></div>
+      <div class="info"><b>Perfume launch ad</b><span>BRAND · 0:24</span></div>
+    </div>
+    <div class="card" data-video="videos/podcast-highlight.mp4" onclick="openLightbox(this)">
+      <video src="videos/podcast-highlight.mp4" muted loop playsinline preload="metadata"></video>
+      <div class="p-icon"></div>
+      <div class="info"><b>Podcast highlight</b><span>PODCAST · 0:58</span></div>
+    </div>
+    <div class="card" data-video="videos/restaurant-opening.mp4" onclick="openLightbox(this)">
+      <video src="videos/restaurant-opening.mp4" muted loop playsinline preload="metadata"></video>
+      <div class="p-icon"></div>
+      <div class="info"><b>Restaurant opening</b><span>BRAND · 0:29</span></div>
+    </div>
+    <div class="card" data-video="videos/travel-vlog.mp4" onclick="openLightbox(this)">
+      <video src="videos/travel-vlog.mp4" muted loop playsinline preload="metadata"></video>
+      <div class="p-icon"></div>
+      <div class="info"><b>Travel vlog cut</b><span>INFLUENCER · 0:41</span></div>
+    </div>
+    <div class="card" data-video="videos/skincare-review.mp4" onclick="openLightbox(this)">
+      <video src="videos/skincare-review.mp4" muted loop playsinline preload="metadata"></video>
+      <div class="p-icon"></div>
+      <div class="info"><b>Skincare review</b><span>INFLUENCER · 0:36</span></div>
+    </div>
+    <div class="card" data-video="videos/product-unboxing.mp4" onclick="openLightbox(this)">
+      <video src="videos/product-unboxing.mp4" muted loop playsinline preload="metadata"></video>
+      <div class="p-icon"></div>
+      <div class="info"><b>Product unboxing</b><span>BRAND · 0:22</span></div>
+    </div>
+    <div class="card" data-video="videos/qa-highlight.mp4" onclick="openLightbox(this)">
+      <video src="videos/qa-highlight.mp4" muted loop playsinline preload="metadata"></video>
+      <div class="p-icon"></div>
+      <div class="info"><b>Q&amp;A highlight</b><span>PODCAST · 0:47</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
+  <div class="lightbox-inner">
+    <button class="lightbox-close" onclick="closeLightbox(event)">✕</button>
+    <video id="lightbox-video" controls playsinline preload="none"></video>
+  </div>
+</div>
+
+<!-- CASE STUDIES / RESULTS -->
+<section id="results" class="stats-band">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Real numbers</span>
+      <h2>النتائج مش بس شكل حلو</h2>
+    </div>
+    <div class="case-grid">
+      <div class="case">
+        <div class="num">+2.4M</div>
+        <div class="lbl">مشاهدة على ريل واحد</div>
+        <div class="desc">لمؤثرة موضة — بعد إعادة المونتاج بإيقاع أسرع في أول 3 ثواني.</div>
+      </div>
+      <div class="case">
+        <div class="num">×3</div>
+        <div class="lbl">زيادة معدل التفاعل</div>
+        <div class="desc">لحملة إطلاق منتج عناية بالبشرة عبر تقسيم الفيديو لسلسلة قصص.</div>
+      </div>
+      <div class="case">
+        <div class="num">48</div>
+        <div class="lbl">ساعة متوسط وقت التسليم</div>
+        <div class="desc">من استلام الخام لحد الفيديو الجاهز للنشر، شامل مراجعتين.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="wrap about">
+  <div class="about-photo">صورة شخصية / لوجو</div>
+  <div>
+    <span class="eyebrow">About</span>
+    <h2 class="serif" style="font-size:32px;">15 سنة في المونتاج، وشغوف بالتفاصيل الصغيرة</h2>
+    <hr class="gold-line">
+    <p>اشتغلت مع مؤثرين وبراندات في مصر والخليج على محتوى بيتفرج عليه ملايين الناس شهريًا. مش بقدم مونتاج بس، بقدم استراتيجية بصرية بتخلي المحتوى يوقف السكرول.</p>
+    <p>بتكلم عربي وإنجليزي، وبفهم إيقاع المنصات المختلفة — اللي بينجح في تيك توك مش هو نفسه اللي بينجح في يوتيوب شورتس.</p>
+    <div class="badges">
+      <span class="badge">Adobe Premiere Pro</span>
+      <span class="badge">DaVinci Resolve</span>
+      <span class="badge">After Effects</span>
+      <span class="badge">Motion Graphics</span>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" class="wrap">
+  <div class="section-head">
+    <span class="eyebrow">Client words</span>
+    <h2>آراء اشتغلت معاهم</h2>
+  </div>
+  <div class="testi-grid">
+    <div class="testi">
+      <div class="stars">★★★★★</div>
+      <p>"شغل مختلف تمامًا عن أي مونتير اشتغلت معاه. الريلز بتاعتي بقالها شكل تاني خالص من ناحية الإيقاع والألوان."</p>
+      <div class="who">سارة الحربي</div>
+      <div class="role">مؤثرة موضة — الرياض</div>
+    </div>
+    <div class="testi">
+      <div class="stars">★★★★★</div>
+      <p>"التزام في المواعيد وفهم سريع لهوية البراند. النتائج على الحملة كانت أعلى من المتوقع."</p>
+      <div class="who">فهد العتيبي</div>
+      <div class="role">مدير تسويق — دبي</div>
+    </div>
+    <div class="testi">
+      <div class="stars">★★★★★</div>
+      <p>"بيسمعك كويس ويحول الفكرة لفيديو أحسن مما تخيلت. أنصح بيه لأي حد بيدور على مونتير محترف."</p>
+      <div class="who">مها الكندري</div>
+      <div class="role">صانعة محتوى — الكويت</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <div class="wrap">
+    <span class="eyebrow" style="color:var(--gold);">Let's work together</span>
+    <h2>جاهز تبدأ مشروعك الجاي؟</h2>
+    <p>ابعتلي تفاصيل الفيديو أو الحملة، ورد عليك خلال ساعات. أول استشارة مجانية.</p>
+    <div class="btn-row">
+      <a href="https://wa.me/01097195863" target="_blank" class="btn btn-primary">راسلني على واتساب</a>
+      <a href="mailto:abdalluhomer389@gmail.com" class="btn btn-outline">راسلني بالإيميل</a>
+    </div>
+  </div>
+</section>
+
+<footer>© 2026 Abdalluh's — كل الحقوق محفوظة</footer>
+
+<a class="wa-float" href="https://wa.me/01097195863" target="_blank" aria-label="واتساب">
+  <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.44 1.32 4.94L2 22l5.29-1.39a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.87 9.87 0 0 0 12.04 2m0 1.67c2.2 0 4.27.86 5.83 2.42a8.2 8.2 0 0 1 2.42 5.82c0 4.54-3.7 8.24-8.25 8.24a8.2 8.2 0 0 1-4.19-1.15l-.3-.17-3.14.82.84-3.06-.19-.32a8.15 8.15 0 0 1-1.26-4.36c0-4.55 3.7-8.24 8.24-8.24M8.53 7.33c-.16 0-.43.06-.66.31-.22.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.25 3.73.59.26 1.06.41 1.42.52.6.19 1.14.16 1.57.1.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.07-.1-.24-.16-.5-.29-.27-.13-1.57-.77-1.81-.86-.24-.09-.42-.13-.6.13-.17.26-.68.86-.83 1.04-.15.17-.31.19-.57.06-.27-.13-1.12-.41-2.13-1.31-.79-.7-1.32-1.57-1.48-1.83-.15-.27-.02-.41.12-.54.12-.12.27-.32.4-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.13-.6-1.5-.86-2.04-.22-.48-.45-.46-.63-.47z"/></svg>
+</a>
+
+<script>
+  // معاينة صامتة عند مرور الماوس على الكارت
+  document.querySelectorAll('.card').forEach(card=>{
+    const vid = card.querySelector('video');
+    card.addEventListener('mouseenter', ()=>{ vid.currentTime=0; vid.play().catch(()=>{}); });
+    card.addEventListener('mouseleave', ()=>{ vid.pause(); });
+  });
+
+  // فتح الفيديو بشاشة كبيرة وبصوت عند الضغط
+  function openLightbox(card){
+    const src = card.getAttribute('data-video');
+    const box = document.getElementById('lightbox');
+    const vid = document.getElementById('lightbox-video');
+    vid.src = src;
+    box.classList.add('open');
+    vid.play().catch(()=>{});
+  }
+  function closeLightbox(e){
+    if(e.target.id !== 'lightbox' && !e.target.classList.contains('lightbox-close')) return;
+    const box = document.getElementById('lightbox');
+    const vid = document.getElementById('lightbox-video');
+    vid.pause(); vid.src=''; 
+    box.classList.remove('open');
+  }
+</script>
+</body>
+</html>
